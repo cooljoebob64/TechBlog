@@ -1,4 +1,4 @@
-package com.tts.TechBlog.BlogPost.model;
+package com.tts.TechBlog.blogpost.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -62,4 +62,8 @@ public class BlogPost {
                 ", blogEntry='" + blogEntry + '\'' +
                 '}';
     }
+
+    // TODO: Override .hashcode()
+    // TODO: Override .equals()
+
 }
