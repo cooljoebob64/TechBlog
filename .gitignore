@@ -233,6 +233,7 @@ gradle-app.setting
 
 # End of https://www.toptal.com/developers/gitignore/api/java,java-web,intellij,gradle
 
+## Private key configuration files ##
 src/main/resources/application.yml
 build/resources/main/application.yml
 application.yml
