@@ -23,9 +23,9 @@ public class BlogPostService {
         return (List<BlogPost>)repo.findAll();
     }
 
-//    public List<BlogPost> searchByKeyword(String keyword){
-//        return repo.searchByKeyword(keyword);
-//    }
+    public List<BlogPost> searchByKeyword(String keyword){
+        return repo.search(keyword);
+    }
 
     public BlogPost getBlogPost(Long id){
         return repo.findById(id).get();

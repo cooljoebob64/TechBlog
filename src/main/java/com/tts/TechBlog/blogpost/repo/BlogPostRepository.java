@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface BlogPostRepository extends CrudRepository<BlogPost, Long> {
 
-//    @Query("SELECT s FROM BlogPost s WHERE s.BlogEntry LIKE %?1% OR s.Title LIKE %?1% OR s.Author LIKE %?1%")
-//    public List<BlogPost> searchByKeyword(String keyword);
+    @Query(value = "SELECT * from BLOG_POST where TITLE LIKE ?1 OR AUTHOR LIKE ?1 OR BLOG_ENTRY LIKE ?1", nativeQuery = true)
+    public List<BlogPost> search(String keyword);
 }
