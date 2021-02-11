@@ -26,7 +26,7 @@ public class BlogPostController {
 
     private BlogPost blogPost;
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model){
         service.addBlogPost(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
         posts.add(blogPost);
@@ -34,5 +34,10 @@ public class BlogPostController {
         model.addAttribute("author", blogPost.getAuthor());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
         return "blogpost/result";
+    }
+
+    @GetMapping(value="/blogposts/createPost")
+    public String newBlog (BlogPost blogPost){
+        return "blogpost/createPost";
     }
 }
