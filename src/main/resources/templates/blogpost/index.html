@@ -14,6 +14,10 @@
 <div class="container">
     <h1>Welcome to Our Blog Post Site!</h1>
 
+    <a th:href="@{/blogposts/createPost}">
+        <button class="btn btn-primary">Submit a New Blog Post</button>
+    </a>
+
     <div class="row">
         <div th:each="blog:${posts}">
             <div class="col-md-12">
@@ -28,17 +32,22 @@
                     <div class="panel-footer">
                         <!-- Link to Update -->
                         <!-- Link to Show  -->
-                        <!--  Link to Destroy -->
+                        <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
+                              class="form-horizontal">
+                            <div class="form-group">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                            </div>
+                        </form>
                         Buttons
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <a th:href="@{/blogposts/createPost}">
-        <button class="btn btn-primary">Submit a New Blog Post</button>
-    </a>
+
 
 </div>
 

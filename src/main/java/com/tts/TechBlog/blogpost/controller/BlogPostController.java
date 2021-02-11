@@ -19,6 +19,7 @@ public class BlogPostController {
 
     @GetMapping("/")
     public String index(BlogPost blogPost, Model model){
+        posts = service.listAll();
         model.addAttribute("posts", posts);
         return "blogpost/index";
     }
@@ -28,7 +29,7 @@ public class BlogPostController {
     @PostMapping(value = "/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model){
         service.addBlogPost(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
-        posts.add(blogPost);
+        posts = service.listAll();
         model.addAttribute("title", blogPost.getTitle());
         model.addAttribute("author", blogPost.getAuthor());
         model.addAttribute("blogEntry", blogPost.getBlogEntry());
