@@ -42,8 +42,11 @@ public class BlogPostController {
     }
 
     @RequestMapping(value="/blogposts/{id}", method= RequestMethod.DELETE)
-    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost){
+    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost, Model model){
         service.deleteBlogPost(id);
+        posts = service.listAll();
+        model.addAttribute("posts", posts);
         return "blogpost/index";
     }
+
 }

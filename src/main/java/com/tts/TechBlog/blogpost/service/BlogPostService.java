@@ -20,7 +20,8 @@ public class BlogPostService {
     }
 
     public List<BlogPost> listAll(){
-        return (List<BlogPost>)repo.findAll();
+        return (List<BlogPost>)
+                repo.findAll();
     }
 
     public List<BlogPost> searchByKeyword(String keyword){
