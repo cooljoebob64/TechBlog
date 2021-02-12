@@ -47,7 +47,7 @@ public class BlogPostController {
         service.deleteBlogPost(id);
         posts = service.listAll();
         model.addAttribute("posts", posts);
-        return "blogpost/index";
+        return "blogpost/delete";
     }
 
     @GetMapping(value = "/blogposts/{id}")
