@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -26,6 +27,10 @@ public class BlogPostService {
 
     public List<BlogPost> searchByKeyword(String keyword){
         return repo.search(keyword);
+    }
+
+    public Optional<BlogPost> findById(Long id){
+       return repo.findById(id);
     }
 
     public BlogPost getBlogPost(Long id){
