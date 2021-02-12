@@ -10,18 +10,22 @@
     <div th:replace="fragments/navbar :: navbar"></div>
 
     <h1>Edit a Post</h1>
-    <form action="#" th:action="@{~/blogposts/update/{id}(id=${blogPost.getId()})}" th:object="${blogPost}" method="post">
+    <form action="#" th:action="@{~/blogposts/update/{id}(id=${blogPost.id})}" th:object="${blogPost}" method="post">
 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}"/>
+
+            <label for="blogTitle">Title:</label>
+            <input id="blogTitle" type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}"/>
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}"/>
+            <label for="blogAuthor">Author:</label>
+            <input id="blogAuthor" type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}"/>
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Blog Entry" th:field="*{blogEntry}"/>
+            <label for="blogEntry">Blog Entry:</label>
+            <input id="blogEntry" type="text" class="form-control" placeholder="Blog Entry" th:field="*{blogEntry}"/>
         </div>
 
         <button class="btn btn-primary">Submit Your Post</button>
